@@ -29,23 +29,23 @@ class GUI {
     GUI() {
         JFrame f = new JFrame("Student Management System");
 
-        // 🎨 COLORS
+        // COLORS
         Color bgColor = new Color(245, 247, 250);
         Color primary = new Color(52, 152, 219);
         Color danger = new Color(231, 76, 60);
         Color success = new Color(46, 204, 113);
 
-        // 🧱 MAIN PANEL
+        // MAIN PANEL
         JPanel mainPanel = new JPanel(new BorderLayout(15, 15));
         mainPanel.setBackground(bgColor);
         mainPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
-        // 🏷 TITLE
+        // TITLE
         JLabel title = new JLabel("Student Management System", JLabel.CENTER);
         title.setFont(new Font("Segoe UI", Font.BOLD, 22));
         title.setForeground(primary);
 
-        // 🧾 FORM PANEL
+        // FORM PANEL
         JPanel formPanel = new JPanel(new GridLayout(5, 2, 10, 10));
         formPanel.setBackground(bgColor);
 
@@ -63,7 +63,7 @@ class GUI {
         formPanel.add(new JLabel("Email:"));
         formPanel.add(emailField);
 
-        // 🎯 BUTTON PANEL
+        // BUTTON PANEL
         JPanel btnPanel = new JPanel(new GridLayout(1, 3, 10, 10));
         btnPanel.setBackground(bgColor);
 
@@ -71,7 +71,7 @@ class GUI {
         JButton updateBtn = new JButton("Update");
         JButton deleteBtn = new JButton("Delete");
 
-        // 🎨 Button Colors
+        // Button Colors
         addBtn.setBackground(success);
         addBtn.setForeground(Color.WHITE);
 
@@ -85,7 +85,7 @@ class GUI {
         btnPanel.add(updateBtn);
         btnPanel.add(deleteBtn);
 
-        // 📊 TABLE
+        // TABLE
         model = new DefaultTableModel();
         table = new JTable(model);
 
@@ -97,18 +97,18 @@ class GUI {
 
         JScrollPane sp = new JScrollPane(table);
 
-        // 📦 LEFT PANEL (Form + Buttons)
+        // LEFT PANEL (Form + Buttons)
         JPanel leftPanel = new JPanel(new BorderLayout(10, 10));
         leftPanel.setBackground(bgColor);
         leftPanel.add(formPanel, BorderLayout.CENTER);
         leftPanel.add(btnPanel, BorderLayout.SOUTH);
 
-        // 🧱 ADD TO MAIN PANEL
+        // ADD TO MAIN PANEL
         mainPanel.add(title, BorderLayout.NORTH);
         mainPanel.add(leftPanel, BorderLayout.WEST);
         mainPanel.add(sp, BorderLayout.CENTER);
 
-        // 🧠 TABLE CLICK
+        // TABLE CLICK
         table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 int i = table.getSelectedRow();
@@ -120,7 +120,7 @@ class GUI {
             }
         });
 
-        // ➕ ADD
+        // ADD
         addBtn.addActionListener(e -> {
             StudentDAO.addStudent(
                     nameField.getText(),
@@ -134,7 +134,7 @@ class GUI {
             JOptionPane.showMessageDialog(f, "Student Added!");
         });
 
-        // ✏ UPDATE
+        // UPDATE
         updateBtn.addActionListener(e -> {
             int row = table.getSelectedRow();
             if (row >= 0) {
@@ -154,7 +154,7 @@ class GUI {
             }
         });
 
-        // ❌ DELETE
+        // DELETE
         deleteBtn.addActionListener(e -> {
             int row = table.getSelectedRow();
             if (row >= 0) {
@@ -176,7 +176,7 @@ class GUI {
         f.setVisible(true);
     }
 
-    // 🧹 Clear fields
+    // Clear fields
     void clearFields(JTextField n, JTextField c, JTextField r, JTextField e) {
         n.setText("");
         c.setText("");

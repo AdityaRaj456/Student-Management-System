@@ -97,6 +97,10 @@ java -cp ".;lib/mysql-connector-j-9.6.0.jar;src" Main
 - Export data to file
 - UI upgrade using JavaFX
 
+## Author 
+ - Aditya Raj Tiwari
+ - 24BCE10218
+
 ## Conclusion
 
 This project demonstrates how Advanced Java concepts can be used to build a complete database-driven desktop application. It integrates GUI, backend logic, and database operations effectively.
